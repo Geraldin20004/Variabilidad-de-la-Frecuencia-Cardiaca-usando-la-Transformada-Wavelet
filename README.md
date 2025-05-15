@@ -30,6 +30,37 @@ Detección de eventos transitorios, patrones anormales y control de calidad de s
 - Symlet y Coiflet: versiones modificadas para mayor simetría.
 - Morlet: recomendada cuando se requiere alta resolución temporal y frecuencial simultánea.
 ## CÓDIGO IMPLEMENTADO 
+
+El primer paso fue cargar los datos utilizando tkinter para abrir un cuadro de diálogo y seleccionar un archivo .csv que contenga una señal ECG.
+
+```python
+file_path = askopenfilename(filetypes=[("CSV files", "*.csv")])
+df = pd.read_csv(file_path)
+t = df['Tiempo (s)'].to_numpy()
+x = df['Voltaje (V)'].to_numpy()
+```
+Se extraen las columnas de tiempo y voltaje en arreglos de NumPy para su manipulación.
+
+Luego, se procede al diseño del filtro Butterworth pasa banda con frecuencias de corte entre 0.5 Hz y 40 Hz.
+
+```python
+b, a = butter(order, [lowcut/nyq, highcut/nyq], btype='band')
+```
+- Se muestra la respuesta en frecuencia del filtro.
+
+```python
+w, h = freqz(b, a, worN=8000)
+plt.plot(...)
+```
+- Se aplica el filtro manualmente usando la ecuación, permitiendo  implementar el filtrado de la señal ECG con condiciones iniciales en cero.
+
+```python
+for n in range(len(x)):
+    ...
+```
+
+
+
 ##  Resultados
 La visualización es una parte esencial del análisis de la variabilidad de la frecuencia cardíaca (HRV), ya que permite interpretar de forma intuitiva los resultados obtenidos en las etapas previas del procesamiento de la señal electrocardiográfica (ECG). En este bloque final del código se generan seis subgráficas agrupadas en una sola figura para observar y comparar fácilmente los distintos aspectos del análisis.
 
