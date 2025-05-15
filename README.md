@@ -37,16 +37,16 @@ Las gráficas están organizadas en una figura de 3 filas por 2 columnas, abarca
 
 ### Señal Original vs Señal Filtrada
 
-https://github.com/Geraldin20004/Variabilidad-de-la-Frecuencia-Cardiaca-usando-la-Transformada-Wavelet/blob/main/SE%C3%91AL.png
-
-https://github.com/Geraldin20004/Variabilidad-de-la-Frecuencia-Cardiaca-usando-la-Transformada-Wavelet/blob/main/FILTRO%20BUTTER.png
+![image](https://github.com/user-attachments/assets/f61544fa-a85e-45e1-b56c-7c44e3e407d9)
+![image](https://github.com/user-attachments/assets/44b63916-6d62-4974-912a-2ab747c2739f)
 
 Esta gráfica compara la señal ECG original (en gris) con la señal filtrada (en azul), la cual ha sido procesada mediante un filtro digital Butterworth pasa banda de 0.5 Hz a 40 Hz. Puesto que se busca eliminar componentes de ruido de baja y alta frecuencia sin alterar la información clínica relevante de la señal. 
 Lo cual muestra una señal azul más suave y clara, que conserva los picos R necesarios para el análisis de HRV.
 
 ### Detección de Picos R
 
-https://github.com/Geraldin20004/Variabilidad-de-la-Frecuencia-Cardiaca-usando-la-Transformada-Wavelet/blob/main/DETECCI%C3%93N%20DE%20PICOS%20R.png
+![image](https://github.com/user-attachments/assets/e22b7860-e743-4252-b869-36a4c3c1ea69)
+
 
 Esta gráfica muestra los picos R detectados (en rojo) superpuestos sobre la señal ECG filtrada.
 
@@ -55,13 +55,15 @@ Esta gráfica muestra los picos R detectados (en rojo) superpuestos sobre la se�
 
 ### Intervalos R-R
 
-https://github.com/Geraldin20004/Variabilidad-de-la-Frecuencia-Cardiaca-usando-la-Transformada-Wavelet/blob/main/INTERVALOS%20R-R.png
+![image](https://github.com/user-attachments/assets/ed25b573-e377-4f70-b9e9-a7925125ffed)
+
 
 Se grafican los intervalos R-R (en segundos) contra el tiempo promedio entre cada par de picos R consecutivos con el fin de observar la variabilidad temporal de los latidos del corazón ya que una mayor variabilidad suele estar asociada a un buen estado de salud y capacidad de adaptación autonómica.
 
 ### Frecuencia Cardíaca Estimada
 
-https://github.com/Geraldin20004/Variabilidad-de-la-Frecuencia-Cardiaca-usando-la-Transformada-Wavelet/blob/main/FRECUENCIA%20CARDIACA%20ESTIMADA.png
+![image](https://github.com/user-attachments/assets/b88dc201-d8ca-4a86-a482-205fdf7fdd1b)
+
 
 Aquí se calcula la frecuencia cardíaca instantánea (en bpm) como el inverso de los intervalos R-R:     bpm= 60/ RR(s)
 Necesario para evaluar cómo cambia el ritmo cardíaco en el tiempo, además, esta gráfica puede indicar estados de reposo, esfuerzo o alteraciones del ritmo.
@@ -69,8 +71,9 @@ Necesario para evaluar cómo cambia el ritmo cardíaco en el tiempo, además, es
 
 
 ### Escalograma SWT (Transformada Wavelet Estacionaria)
-README.md: ! ESCALOGRAMA SWT.
-https://github.com/Geraldin20004/Variabilidad-de-la-Frecuencia-Cardiaca-usando-la-Transformada-Wavelet/blob/main/ESCALOGRAMA%20SWT.png
+
+![image](https://github.com/user-attachments/assets/3be6bff0-8618-43e7-98dd-8ec8a4c1e479)
+
 
 -Esta gráfica muestra un mapa de calor (escalograma) generado mediante la **Transformada Wavelet Estacionaria (SWT)** de la señal de intervalos R-R interpolada.
 -Se utiliza la wavelet **Daubechies 4 (db4)** para la descomposición.
