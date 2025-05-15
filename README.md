@@ -69,7 +69,7 @@ Necesario para evaluar cómo cambia el ritmo cardíaco en el tiempo, además, es
 
 
 ### Escalograma SWT (Transformada Wavelet Estacionaria)
-
+README.md: ! ESCALOGRAMA SWT.
 https://github.com/Geraldin20004/Variabilidad-de-la-Frecuencia-Cardiaca-usando-la-Transformada-Wavelet/blob/main/ESCALOGRAMA%20SWT.png
 
 -Esta gráfica muestra un mapa de calor (escalograma) generado mediante la **Transformada Wavelet Estacionaria (SWT)** de la señal de intervalos R-R interpolada.
@@ -84,7 +84,9 @@ https://github.com/Geraldin20004/Variabilidad-de-la-Frecuencia-Cardiaca-usando-l
 Previamente en el código, se calcula la **energía por nivel wavelet**, y se asocian niveles específicos con bandas fisiológicas:
 
 -Nivel 4 (LF):** Banda de baja frecuencia (0.04 - 0.15 Hz), asociada a la actividad simpática.
+
 -Nivel 3 (HF):** Banda de alta frecuencia (0.15 - 0.4 Hz), asociada a la actividad parasimpática.
+
 -La comparación de la energía en ambas bandas permite hacer inferencias sobre el equilibrio autonómico:
 
  *HF > LF:** Dominio parasimpático (reposo, relajación).
