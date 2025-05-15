@@ -75,7 +75,7 @@ intervalos_rr = np.diff(tiempos_picos)
 Media RR: promedio de los intervalos R-R
 SDNN: desviación estándar de los intervalos R-R
 
--Interpolación de R-R: Se interpola la señal RR para obtener un muestreo  necesario para aplicar la transformada wavelet.
+- Interpolación de R-R: Se interpola la señal RR para obtener un muestreo  necesario para aplicar la transformada wavelet.
 
 ```python
 fs_interp = 4
@@ -165,6 +165,19 @@ Previamente en el código, se calcula la **energía por nivel wavelet**, y se as
  *HF > LF:** Dominio parasimpático (reposo, relajación).
  *LF ≥ HF:** Dominio simpático (estrés, esfuerzo, actividad).
 
+![image](https://github.com/user-attachments/assets/a3fdebe3-f758-4493-908c-1ea4f51812c1)
 
+* Media RR (4.8858 s): Representa el tiempo promedio entre cada latido del corazón (picos R consecutivos). Un valor alto sugiere un ritmo cardíaco más lento. Esto es característico de estados de reposo, relajación profunda o sujetos con buena condición cardiovascular.
+* SDNN (8.5799 s): Es la desviación estándar de los intervalos RR, una medida clave de la variabilidad de la frecuencia cardíaca. Un valor alto como este indica una alta variabilidad, lo cual suele ser positivo y se asocia con un buen equilibrio autonómico y adaptabilidad del sistema nervioso.
+* Energía en banda LF (Low Frequency, nivel 4): 49.14 unidades. Esta banda (0.04 a 0.15 Hz) está asociada tanto a la actividad simpática como a la parasimpática, pero su aumento puede relacionarse con estrés o esfuerzo.
+* Energía en banda HF (High Frequency, nivel 3): 131.00 unidades. Esta banda (0.15 a 0.4 Hz) está directamente relacionada con la actividad parasimpática, es decir, la respuesta de relajación del sistema nervioso autónomo.
+
+- Interpretación Fisiológica
+Predomina la actividad parasimpática (HF > LF).
+Este resultado indica que el sistema nervioso parasimpático está más activo que el simpático, lo cual suele reflejar:
+* Estado de reposo o relajación.
+* Buena regulación autonómica.
+* Ausencia de factores estresantes en el momento de la adquisición de la señal.
+Este patrón es considerado favorable desde el punto de vista clínico y fisiológico, ya que sugiere un corazón que responde de manera flexible y saludable a las condiciones del entorno.
 
 
