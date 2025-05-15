@@ -58,8 +58,47 @@ plt.plot(...)
 for n in range(len(x)):
     ...
 ```
+- Para la detección de Picos R: Se detectan los picos R (latidos) con base en su amplitud y separación temporal mínima. Se almacenan los tiempos de ocurrencia.
 
+ ```python
+  picos, _ = find_peaks(y, height=0.5, distance=int(0.6 * fs))
+```
 
+- Cálculo de intervalos R-R: Se calculan los tiempos entre latidos consecutivos. Son la base para el análisis de HRV.
+  
+```python
+intervalos_rr = np.diff(tiempos_picos)
+```
+
+- Para el análisis de HRV en el dominio del tiempo Se calcula:
+
+Media RR: promedio de los intervalos R-R
+SDNN: desviación estándar de los intervalos R-R
+
+-Interpolación de R-R: Se interpola la señal RR para obtener un muestreo  necesario para aplicar la transformada wavelet.
+
+```python
+fs_interp = 4
+tiempo_interp = np.arange(...)
+rr_interpolados = interp1d(...)(tiempo_interp)
+```
+- Padding para Transformada Wavelet Estacionaria (SWT): Se ajusta la longitud de la señal interpolada al múltiplo más cercano de  (nivel deseado = 4), asegurando la compatibilidad con la SWT.
+
+```python
+rr_pad = np.pad(...)
+t_pad = np.pad(...)
+```
+- Transformada Wavelet y Análisis LF/HF: Se aplica la SWT con la wavelet Daubechies 4 (db4).
+
+```python  
+swt_coeffs = pywt.swt(...)
+detail_swt = np.vstack(...)
+```
+Se calcula la energía de los coeficientes de detalle por nivel:
+
+```python  
+energia_por_nivel = [np.sum(cD**2) for (_, cD) in swt_coeffs]
+```
 
 ##  Resultados
 La visualización es una parte esencial del análisis de la variabilidad de la frecuencia cardíaca (HRV), ya que permite interpretar de forma intuitiva los resultados obtenidos en las etapas previas del procesamiento de la señal electrocardiográfica (ECG). En este bloque final del código se generan seis subgráficas agrupadas en una sola figura para observar y comparar fácilmente los distintos aspectos del análisis.
