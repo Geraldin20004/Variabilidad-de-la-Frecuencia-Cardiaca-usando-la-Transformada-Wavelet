@@ -9,6 +9,9 @@ En nuestro practica de laboratorio como primer paso debiamos realizar una invest
 
 Estas dos ramas trabajan en conjunto para mantener la homeostasis mediante un equilibrio dinámico.
 
+# Diagrama de flujo
+![image](https://github.com/user-attachments/assets/d225a153-474e-4f35-a967-c764ec210a7f)
+
 # Variabilidad de la Frecuencia Cardíaca (HRV)
 La HRV (Heart Rate Variability) se refiere a la variación en los intervalos de tiempo entre latidos cardíacos consecutivos, medidos a partir de los intervalos R-R en un ECG,es un indicador sensible de la actividad del sistema nervioso autónomo.
 
